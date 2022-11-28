@@ -8,6 +8,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name = "";
+  bool changebutton = false;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -50,16 +51,49 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 20.0,
               ),
-              ElevatedButton(
-                child: Text(
-                  "Login",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, MyRoute.HomePage);
+              InkWell(
+                onTap: () async {
+                  setState(() {
+                    changebutton = true;
+                  });
+                  await Future.delayed(Duration(seconds: 1));
+                  Navigator.pushNamed(context, MyRoute.homePage);
                 },
-                style: TextButton.styleFrom(minimumSize: Size(150, 30)),
-              )
+                child: AnimatedContainer(
+                    duration: Duration(seconds: 1),
+                    height: 50,
+                    width: changebutton ? 50 : 150,
+                    alignment: Alignment.center,
+                    child: changebutton
+                        ? const Icon(
+                            Icons.done,
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            "Login",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 18),
+                          ),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurpleAccent,
+                      shape:
+                          changebutton ? BoxShape.circle : BoxShape.rectangle,
+                      // borderRadius: BorderRadius.circular(8)
+                    )),
+              ),
+
+              // ElevatedButton(
+              //   child: Text(
+              //     "Login",
+              //     style: TextStyle(fontWeight: FontWeight.bold),
+              //   ),
+              //   onPressed: () {
+              //     Navigator.pushNamed(context, MyRoute.HomePage);
+              //   },
+              //   style: TextButton.styleFrom(minimumSize: Size(150, 30)),
+              // )
             ],
           ),
         )

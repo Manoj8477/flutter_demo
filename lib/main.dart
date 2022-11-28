@@ -21,10 +21,10 @@ class MyApp extends StatelessWidget {
           fontFamily: GoogleFonts.lato().fontFamily,
           ),
       darkTheme: ThemeData(brightness: Brightness.dark),
-      initialRoute: MyRoute.LoginPage,
+      initialRoute: MyRoute.loginPage,
       routes: {
-        MyRoute.HomePage: (context) => HomePage(),
-        MyRoute.LoginPage: (context) => LoginPage(),
+        MyRoute.homePage: (context) => HomePage(),
+        MyRoute.loginPage: (context) => LoginPage(),
       },
     );
   }
