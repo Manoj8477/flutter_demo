@@ -48,11 +48,39 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: CatalogModel.Items.isNotEmpty
-          ? ListView.builder(
+          ? GridView.builder(
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
               itemCount: CatalogModel.Items.length,
               itemBuilder: (context, index) {
-                return ItemsWidget(item: CatalogModel.Items[index]);
+                final item = CatalogModel.Items[index];
+                return Card(
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    child: GridTile(
+                      child: Image.network(item.image),
+                      header: Container(
+                          color: Colors.deepPurple,
+                          padding: EdgeInsets.all(12),
+                          child: Text(
+                            item.name,
+                            style: TextStyle(color: Colors.white),
+                          )),
+                      footer: Container(
+                          color: Colors.black,
+                          padding: EdgeInsets.all(12),
+                          child: Text(
+                            item.price.toString(),
+                            style: TextStyle(color: Colors.white),
+                          )),
+                    ));
               })
+          // ? ListView.builder(
+          //     itemCount: CatalogModel.Items.length,
+          //     itemBuilder: (context, index) {
+          //       return ItemsWidget(item: CatalogModel.Items[index]);
+          //     })
           : Center(
               child: CircularProgressIndicator(),
             ),
