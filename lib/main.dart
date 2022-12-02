@@ -5,7 +5,7 @@ import 'package:demo_project/pages/login_page.dart';
 import 'package:demo_project/util/routes.dart';
 import 'package:demo_project/util/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 void main() {
   runApp(MyApp());
