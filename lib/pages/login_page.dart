@@ -1,9 +1,11 @@
-// ignore_for_file: use_key_in_widget_constructors
+
 
 import 'package:demo_project/util/routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }

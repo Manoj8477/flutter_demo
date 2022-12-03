@@ -1,6 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:demo_project/models/catalog.dart';
+ import 'package:demo_project/models/catalog.dart';
 import 'package:flutter/material.dart';
 
 class ItemsWidget extends StatelessWidget {
@@ -18,7 +16,7 @@ class ItemsWidget extends StatelessWidget {
         trailing: Text(
           "\$ ${item.price}",
           style:
-              TextStyle(color: Colors.deepPurple, fontWeight: FontWeight.bold),
+            const TextStyle(color: Colors.deepPurple, fontWeight: FontWeight.bold),
         ),
       ),
     );

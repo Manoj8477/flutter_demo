@@ -1,9 +1,10 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
+  const MyDrawer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -11,7 +12,7 @@ class MyDrawer extends StatelessWidget {
       child: ListView(
         // ignore: prefer_const_literals_to_create_immutables
         children: [
-          DrawerHeader(
+          const DrawerHeader(
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
@@ -20,7 +21,7 @@ class MyDrawer extends StatelessWidget {
                 currentAccountPicture: CircleAvatar(
                     backgroundImage: AssetImage("assets/images/vivaan.png")),
               )),
-          ListTile(
+          const ListTile(
             leading: Icon(
               CupertinoIcons.home,
               color: Colors.white,
@@ -31,7 +32,7 @@ class MyDrawer extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(
               CupertinoIcons.profile_circled,
               color: Colors.white,
@@ -42,7 +43,7 @@ class MyDrawer extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(
               CupertinoIcons.mail,
               color: Colors.white,

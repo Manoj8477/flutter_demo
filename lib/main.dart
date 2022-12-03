@@ -1,5 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:demo_project/pages/home_page.dart';
 import 'package:demo_project/pages/login_page.dart';
 import 'package:demo_project/util/routes.dart';
@@ -8,10 +6,12 @@ import 'package:flutter/material.dart';
 
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(brightness: Brightness.dark),
       initialRoute: MyRoute.homePage,
       routes: {
-        MyRoute.homePage: (context) => HomePage(),
-        MyRoute.loginPage: (context) => LoginPage(),
+        MyRoute.homePage: (context) => const HomePage(),
+        MyRoute.loginPage: (context) => const LoginPage(),
       },
     );
   }
