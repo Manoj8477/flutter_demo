@@ -11,26 +11,9 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
-      bottomNavigationBar: Container(
-        color: Colors.white,
-        child: ButtonBar(
-          alignment: MainAxisAlignment.spaceBetween,
-          buttonPadding: EdgeInsets.zero,
-          children: [
-            "\$ ${catalog.price}".text.bold.xl4.red800.make(),
-            ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(MyTheme.blueishColor),
-                        shape:
-                            MaterialStateProperty.all(const StadiumBorder())),
-                    child: "Buy".text.make())
-                .wh(100, 50)
-          ],
-        ).p32(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
       ),
-      appBar: AppBar(),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -54,6 +37,11 @@ class HomeDetailPage extends StatelessWidget {
                           .textStyle(context.captionStyle)
                           .make(),
                       10.heightBox,
+                      " No Cost EMI starts from ₹ 1888.77/ month.Standard EMI starts from ₹ 1060.47/ month.EMI also available on Debit cards"
+                          .text
+                          .textStyle(context.captionStyle)
+                          .make()
+                          .expand()
                     ],
                   ).p64(),
                 ),
@@ -61,6 +49,25 @@ class HomeDetailPage extends StatelessWidget {
             )
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.white,
+        child: ButtonBar(
+          alignment: MainAxisAlignment.spaceBetween,
+          buttonPadding: EdgeInsets.zero,
+          children: [
+            "\$ ${catalog.price}".text.bold.xl4.red800.make(),
+            ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(MyTheme.blueishColor),
+                        shape:
+                            MaterialStateProperty.all(const StadiumBorder())),
+                    child: "Add to cart".text.make())
+                .wh(120, 50)
+          ],
+        ).p32(),
       ),
     );
   }
