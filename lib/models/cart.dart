@@ -1,6 +1,12 @@
 import 'package:demo_project/models/catalog.dart';
 
 class CartModel {
+  
+  static final cartModel = CartModel.instance();
+  CartModel.instance();
+  factory CartModel() => cartModel;
+
+
   CatalogModel _catalog = CatalogModel();
   CatalogModel get catalog => _catalog;
   set catalog(CatalogModel newcatalog) {
