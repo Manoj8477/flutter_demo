@@ -10,7 +10,7 @@ class CatalogModel {
 }
 
 class Item {
-  final num id;
+  final int id;
   final String name;
   final String desc;
   final num price;
@@ -41,7 +41,7 @@ class Item {
   //     };
 
   Item copyWith({
-    num? id,
+    int? id,
     String? name,
     String? desc,
     num? price,
@@ -71,7 +71,7 @@ class Item {
 
   factory Item.fromMap(Map<String, dynamic> map) {
     return Item(
-      map['id'] as num,
+      map['id'] as int,
       map['name'] as String,
       map['desc'] as String,
       map['price'] as num,
