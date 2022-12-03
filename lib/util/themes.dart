@@ -8,6 +8,7 @@ class MyTheme {
       fontFamily: GoogleFonts.poppins().fontFamily,
       cardColor: Colors.white,
       canvasColor: creamColor,
+      hintColor: blueishColor,
       floatingActionButtonTheme:
           FloatingActionButtonThemeData(backgroundColor: blueishColor),
       colorScheme:
@@ -23,17 +24,19 @@ class MyTheme {
       fontFamily: GoogleFonts.poppins().fontFamily,
       cardColor: Colors.black,
       canvasColor: darkcreamColor,
+      hintColor: Colors.white,
       floatingActionButtonTheme:
           FloatingActionButtonThemeData(backgroundColor: lightBlueishColor),
       colorScheme: Theme.of(context)
           .colorScheme
           .copyWith(secondary: Colors.yellow, brightness: Brightness.dark),
       appBarTheme: AppBarTheme(
-          color: Colors.black,
-          elevation: 0.0,
-          iconTheme: const IconThemeData(color: Colors.white),
-          toolbarTextStyle: Theme.of(context).textTheme.bodyText2,
-          titleTextStyle: Theme.of(context).textTheme.headline6));
+        color: Colors.black,
+        elevation: 0.0,
+        iconTheme: const IconThemeData(color: Colors.white),
+        toolbarTextStyle: Theme.of(context).textTheme.bodyText2,
+        titleTextStyle: Theme.of(context).textTheme.headline6,
+      ));
 
   //color
   static Color creamColor = const Color(0xfff5f5f5);
