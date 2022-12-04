@@ -1,12 +1,12 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+
 import 'dart:convert';
 
-// ignore_for_file: non_constant_identifier_names
+
 
 class CatalogModel {
-  static final catModel = CatalogModel.instance();
-  CatalogModel.instance();
-  factory CatalogModel() => catModel;
+  // static final catModel = CatalogModel.instance();
+  // CatalogModel.instance();
+  // factory CatalogModel() => catModel;
 
   static List<Item> Items = List.empty();
   Item getById(int id) => Items.firstWhere((element) => element.id == id);
